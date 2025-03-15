@@ -1,0 +1,4 @@
+{:deps {org.clojure/clojurescript {:mvn/version "1.11.54"}
+        org.clojure/core.async {:mvn/version "1.7.701"}
+        com.cognitect/transit-cljs {:mvn/version "0.8.280"}}}
+

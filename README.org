@@ -1,0 +1,5 @@
+* Compiling
+#+begin_src sh
+  clj -M -m cljs.main --optimizations advanced --compile discord-gateway.core
+#+end_src
+

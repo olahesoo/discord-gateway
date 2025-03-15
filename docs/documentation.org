@@ -1,0 +1,24 @@
+* Architecture
+** State management
+There is a single variable in the socket controller that holds mutable
+state. State is modified using tasks, functions which take a state as
+input and return a new state. Immutable state is passed around using
+function closures.
+** Concepts
+*** Tasks
+Tasks are functions that take state as input and return a new
+state. Tasks are the only functions that may perform side effects.
+*** Parsers
+Parsers are pure functions that take an event as input and return a
+task.
+*** Matchers
+Matchers are pure functions that take an event as input and return a
+boolean.
+*** Handlers
+A handler is a combination of a matcher and a parser.
+*** Dispatchers
+A dispatcher is a function that takes an event, a sequence of handlers
+and an optional default parser as input. The dispatcher collects
+handlers that match the event and combines their parsers with the
+event, outputting a single task. The dispatcher uses its default
+parser if no handlers match the event.

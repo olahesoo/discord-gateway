@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="main.js"></script>
+    <script src="sample.js"></script>
+  </head>
+  <body>
+    <div>
+      <label>token</label>
+      <input type="password" id="token-input" />
+    </div>
+    <div>
+      <label>guild id</label>
+      <input type="text" id="guild-input" />
+    </div>
+    <div>
+      <label>channel id</label>
+      <input type="text" id="channel-input" />
+    </div>
+    <button onClick="launch_gateway()">launch gateway</button>
+    <div>
+      <label>emojis</label>
+      <ol id="emojis-list">
+      </ol>
+    </div>
+    <button onClick="clear_emojis()">clear emojis</button>
+  </body>
+</html>
