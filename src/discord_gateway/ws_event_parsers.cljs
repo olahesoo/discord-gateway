@@ -1,7 +1,6 @@
 (ns discord-gateway.ws-event-parsers
   (:require
-   [discord-gateway.heartbeat :refer [close-beater-if-active]]
-   [cognitect.transit :as t]))
+   [discord-gateway.heartbeat :refer [close-beater-if-active]]))
 
 (defn parse-console-debug [event]
   (fn [state]

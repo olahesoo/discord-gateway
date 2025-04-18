@@ -1,5 +1,29 @@
 {
   "nodes": {
+    "cljs": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-eW39uAcwIQ95sgEMPcSSdCk7M5oE4iV0ePN3zoiJdqU=",
+        "type": "file",
+        "url": "https://github.com/clojure/clojurescript/releases/download/r1.11.132/cljs.jar"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/clojure/clojurescript/releases/download/r1.11.132/cljs.jar"
+      }
+    },
+    "core-async": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-L7V8Ld/tqOBNUU5Ufzx+jxtRaSxlEfLkfuKVdN9ZGKE=",
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/clojure/core.async/1.7.701/core.async-1.7.701.jar"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/clojure/core.async/1.7.701/core.async-1.7.701.jar"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1741862977,
@@ -18,7 +42,35 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "cljs": "cljs",
+        "core-async": "core-async",
+        "nixpkgs": "nixpkgs",
+        "transit-cljs": "transit-cljs",
+        "transit-js": "transit-js"
+      }
+    },
+    "transit-cljs": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-6PqA3CIxcr2GBDLly0vRTwsNH/Gk0CI6mStyW9o3PXA=",
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/cognitect/transit-cljs/0.8.280/transit-cljs-0.8.280.jar"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/cognitect/transit-cljs/0.8.280/transit-cljs-0.8.280.jar"
+      }
+    },
+    "transit-js": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-OcjYADqatXBvxFsTyvJ8tXenQ4C9qPyq4UWN8S78cJc=",
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/cognitect/transit-js/0.8.874/transit-js-0.8.874.jar"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/cognitect/transit-js/0.8.874/transit-js-0.8.874.jar"
       }
     }
   },
