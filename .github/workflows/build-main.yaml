@@ -1,0 +1,29 @@
+name: Publish discord-gateway
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Lix
+        run: curl --proto '=https' --tlsv1.2 -sSf -L https://install.lix.systems/lix | sh -s -- install --no-confirm
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build main binary
+        run: |
+          nix build
+          mkdir _site
+          mv result _site/discord-gateway.js
+      - name: Upload binary as page artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Github Pages
+        uses: actions/deploy-pages@v4
