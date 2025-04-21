@@ -14,7 +14,7 @@ jobs:
         run: |
           nix build
           mkdir _site
-          mv result _site/discord-gateway.js
+          cp -r result/* _site
       - name: Upload binary as page artifact
         uses: actions/upload-pages-artifact@v3
 

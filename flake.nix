@@ -42,8 +42,14 @@
         cp ${core-async} deps/core-async.jar
         cp ${transit-js} deps/transit-js.jar
         cp ${transit-cljs} deps/transit-cljs.jar
-        java -classpath "deps/*:src" cljs.main --optimizations advanced --compile discord-gateway.core
-        mv out/main.js $out
+        mkdir $out
+        java -classpath "deps/*:src" cljs.main \
+             --compile-opts "{:optimizations :advanced \
+                              :output-dir \"$out\" \
+                              :output-to \"$out/discord-gateway.js\" \
+                              :source-map \"$out/discord-gateway.js.map\" \
+                             }" \
+             --compile discord-gateway.core
         runHook postBuild
         '';
       };
